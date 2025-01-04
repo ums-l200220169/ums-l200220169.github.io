@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Clustering</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .analysis {
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+        }
+    </style>
+</head>
+<body>
+    <h1>Laporan Clustering</h1>
+    <h2>Pendahuluan</h2>
+    <p>
+        File laporan ini berisi step by step melakukan clusterisasi terhadap data beebrapa group wa sebagai tugas sebelum UAS
+    </p>
+
+    <h2>Langkah-langkah yang Dilakukan</h2>
+    <ol>
+        <li><strong>Ekspor Data WhatsApp</strong>: Data dari beberapa grup WhatsApp diekspor dan digabungkan menjadi satu file dengan type file txt (<code>data_wa_group.txt</code>).</li>
+        <li><strong>Konversi ke CSV</strong>: File kemudian di proses di file excel dan mengubahnya menjadi format csv(<code>data_wa_group.csv</code>).</li>
+        <li><strong>Kompresi File</strong>: File CSV dikompresi menjadi TAR (<code>data_wa_group.tar</code>).</li>
+        <li><strong>Pembersihan Data</strong>: Membersihkan data bertujuan untuk memastikan data yang digunakan dalam analisis atau model tidak mengandung kesalahan, duplikasi, atau nilai yang hilang, sehingga hasil analisis atau prediksi lebih akurat dan dapat diandalkan.</li>
+        <li><strong>Scale data</strong>: Data teks diubah menjadi angka numerik dengan menggunakan <code>TfidfVectorizer</code>.</li>
+        <li><strong>Clusterisasi</strong>: Data dilakukan clusterisasi dengan menampilkan cluster 3, 4 , dan 5 menggunakan metode Kmeans</li>
+        <li><strong>Analisis Hasil</strong>: Kata-kata teratas dalam setiap cluster dianalisis untuk mengidentifikasi tema.</li>
+    </ol>
+
+    <h2>Hasil Clustering</h2>
+    <h3>3 Clusters</h3>
+    <pre>
+Cluster 1: har
+Cluster 2: 202
+Cluster 3: sel
+    </pre>
+
+    <h3>4 Clusters</h3>
+    <pre>
+Cluster 1: grou
+Cluster 2: usin
+Cluster 3: join
+Cluster 4: invi
+    </pre>
+
+    <h3>5 Clusters</h3>
+    <pre>
+Cluster 1: code
+Cluster 2: secur
+Cluster 3: learn
+Cluster 4: tap
+Cluster 5: chang
+    </pre>
+
+    <h2>Analisis</h2>
+    <div class="analysis">
+        <p>
+            Pada Klaster-klaster 3 ini menunjukkan bahwa data bisa saja tersebar antara angka, kata umum, dan kategori yang tidak 
+            terlalu spesifik, yang bisa menjadi indikasi bahwa data awalnya perlu dibersihkan atau diproses lebih lanjut. 
+            Sedangkan untuk cluster 4, Klaster-klaster ini lebih terstruktur, menunjukkan bahwa data mulai lebih terfokus 
+            pada kata-kata yang lebih bermakna atau terkait dengan tindakan atau peran dalam komunikasi, seperti grup, 
+            penggunaan, bergabung, dan undangan. Dan cluster 5, Klaster-klaster ini semakin spesifik dan berfokus pada 
+            topik yang lebih jelas, seperti kode, keamanan, pembelajaran, interaksi, dan perubahan. Ini mengindikasikan 
+            bahwa data lebih terorganisir dan bisa dikaitkan dengan topik atau aktivitas tertentu.
+        </p>
+    </div>
+
+    <h2>Kesimpulan</h2>
+    <p>
+        Secara keseluruhan, hasil klasterisasi menunjukkan bahwa data yang ada memiliki tingkat keragaman yang cukup tinggi. 
+        Pada klaster pertama (3 klaster), data masih tersebar antara kata-kata yang umum dan angka, yang mengindikasikan bahwa 
+        data tersebut mungkin masih perlu dibersihkan atau diproses lebih lanjut. Namun, ketika jumlah klaster ditingkatkan 
+        (4 dan 5 klaster), struktur data mulai menunjukkan peningkatan yang signifikan. Pada klaster dengan 4 grup, data mulai 
+        lebih terfokus pada kata-kata yang berhubungan dengan tindakan atau peran dalam komunikasi, seperti grup, penggunaan, 
+        dan bergabung, yang memberi petunjuk bahwa data mulai terorganisir dengan lebih jelas. Sementara itu, pada klaster 
+        dengan 5 grup, data menjadi semakin spesifik, berfokus pada topik-topik yang lebih jelas seperti kode, keamanan, 
+        pembelajaran, dan perubahan. Ini menunjukkan bahwa semakin banyak klaster yang digunakan, semakin terstruktur dan 
+        terorganisir data tersebut, serta lebih mudah dikaitkan dengan topik atau aktivitas yang lebih terdefinisi. Hal ini 
+        mencerminkan pentingnya proses pembersihan dan pengolahan data untuk mencapai hasil klasterisasi yang lebih jelas dan 
+        terorganisir.
+    </p>
+
+    <h2>Daftar File </h2>
+    <ul>
+        <li><strong>data_wa_group.txt</strong>: hasil export dari group wa</li>
+        <li><strong>data_wa_group.csv</strong>: hasil konversi dari txt ke csv</li>
+        <li><strong>data_wa_group.tar</strong>: file kompresi berupa TAR.</li>
+        <li><strong>scale_data.py</strong>: melakukan vektorisasi data.</li>
+        <li><strong>many_kmeans_flow.py</strong>: Coding untuk clustering metaflow menggunakan metode Kmeans.</li>
+        <li><strong>clean_data.py</strong>: Script untuk pembersihan data</li>
+        <li><strong>clustering.py</strong>: menampilkan hasil clusterisasi</li>
+        <li><strong>scaled_data_wa.py</strong>: hasil dari vektorisasi data berupa angka numerik.</li>
+        <li><strong>cleaned_data_wa_group.csv</strong>: Hasil pembersihan data</li>
+    </ul>
+</body>
+</html>
