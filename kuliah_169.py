@@ -32,7 +32,7 @@ class ProsesKuliahFlow(FlowSpec):
     @step
     def dapatkan_nilai(self):
         # Proses mendapatkan nilai akhir
-        self.nilai_akhir = "B+"
+        self.nilai_akhir = "A"
         print(f"{self.nama_mahasiswa} mendapatkan nilai akhir: {self.nilai_akhir}.")
         self.next(self.selesai)
 
